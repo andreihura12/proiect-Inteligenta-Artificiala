@@ -1,0 +1,139 @@
+﻿using System;
+using System.Linq;
+
+using ConsoleApp1.Core;
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main()
+        {
+            var problem = new CarModelProblem();
+
+            // Basic checks on problem definition
+            bool ok = true;
+            Console.WriteLine("Running smoke tests on Core implementations...");
+
+            if (problem.Vars == null || problem.Vars.Count == 0)
+            {
+                Console.WriteLine("FAIL: problem.Vars is null or empty");
+                ok = false;
+            }
+            else
+            {
+                Console.WriteLine($"Vars count: {problem.Vars.Count}");
+            }
+
+            // Evaluate a few sample designs (min, max and mid)
+            var sampleMin = problem.Vars.Select(v => v.Min).ToArray();
+            var sampleMax = problem.Vars.Select(v => v.Max).ToArray();
+            var sampleMid = problem.Vars.Select(v => (v.Min + v.Max) / 2.0).ToArray();
+
+            try
+            {
+                var eMin = problem.Evaluate(sampleMin);
+                var eMax = problem.Evaluate(sampleMax);
+                var eMid = problem.Evaluate(sampleMid);
+
+                Action<(double, double), string> checkFinite = (t, name) =>
+                {
+                    if (double.IsNaN(t.Item1) || double.IsInfinity(t.Item1) ||
+                        double.IsNaN(t.Item2) || double.IsInfinity(t.Item2))
+                    {
+                        Console.WriteLine($"FAIL: Evaluate({name}) returned invalid numbers");
+                        ok = false;
+                    }
+                };
+
+                checkFinite(eMin, "min");
+                checkFinite(eMax, "max");
+                checkFinite(eMid, "mid");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("FAIL: problem.Evaluate threw: " + ex.Message);
+                ok = false;
+            }
+
+            // Run a short NSGA to validate integration
+            var nsga2 = new NSGA_II(problem, popSize: 50, generations: 10,
+                                 mutationProbPerVar: 1.0 / problem.Vars.Count);
+
+            try
+            {
+                var pareto = nsga2.Run();
+
+                if (pareto == null || pareto.Count == 0)
+                {
+                    Console.WriteLine("FAIL: NSGA returned empty Pareto front");
+                    ok = false;
+                }
+                else
+                {
+                    Console.WriteLine($"NSGA returned Pareto front size: {pareto.Count}");
+
+                    // validate individuals
+                    foreach (var ind in pareto)
+                    {
+                        if (ind.X == null || ind.X.Length != problem.Vars.Count)
+                        {
+                            Console.WriteLine("FAIL: Individual.X has wrong size");
+                            ok = false; break;
+                        }
+
+                        for (int i = 0; i < ind.X.Length; i++)
+                        {
+                            var v = ind.X[i];
+                            var dv = problem.Vars[i];
+                            if (v < dv.Min - 1e-9 || v > dv.Max + 1e-9)
+                            {
+                                Console.WriteLine($"FAIL: variable {i} out of bounds ({v})");
+                                ok = false; break;
+                            }
+                        }
+
+                        if (double.IsNaN(ind.F1) || double.IsInfinity(ind.F1) ||
+                            double.IsNaN(ind.F2) || double.IsInfinity(ind.F2))
+                        {
+                            Console.WriteLine("FAIL: Individual objective is invalid");
+                            ok = false; break;
+                        }
+                    }
+
+                    // Clone test
+                    var first = pareto.First();
+                    var clone = first.Clone();
+                    if (clone.X.Length > 0)
+                    {
+                        double old = clone.X[0];
+                        clone.X[0] = problem.Vars[0].Clamp(clone.X[0] + (problem.Vars[0].Max - problem.Vars[0].Min) * 0.1);
+                        if (Math.Abs(first.X[0] - old) < 1e-12)
+                        {
+                            // original unchanged
+                        }
+                        else
+                        {
+                            // if original changed, that's a failure
+                            Console.WriteLine("FAIL: Clone appears to be shallow (original changed)");
+                            ok = false;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("FAIL: NSGA.Run threw: " + ex.Message);
+                ok = false;
+            }
+
+            if (ok)
+                Console.WriteLine("All basic smoke tests PASSED.");
+            else
+                Console.WriteLine("Some smoke tests FAILED. See messages above.");
+
+            // Keep console open when run from IDE
+            Console.WriteLine("Press Enter to exit...");
+            Console.ReadLine();
+        }
+    }
+    }

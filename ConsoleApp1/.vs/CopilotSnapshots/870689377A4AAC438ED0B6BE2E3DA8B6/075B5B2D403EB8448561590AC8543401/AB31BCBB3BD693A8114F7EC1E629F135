@@ -1,0 +1,26 @@
+﻿using System;
+using System.Linq;
+
+using ConsoleApp1.Core;
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main()
+        {
+            var problem = new CarModelProblem();
+            var nsga2 = new NSGA_II(problem, popSize: 150, generations: 200,
+                                 mutationProbPerVar: 1.0 / problem.Vars.Count);
+
+            var pareto = nsga2.Run();
+
+            Console.WriteLine("\nFinal Pareto front (first 10):");
+            foreach (var ind in pareto.Take(10))
+            {
+                double speed = -ind.F1;
+                double energy = ind.F2;
+                Console.WriteLine($"speed={speed:F1} km/h | energy={energy:F2} kWh/100km | x=[{string.Join(", ", ind.X.Select(v => v.ToString("F3")))}]");
+            }
+        }
+    }
+    }
