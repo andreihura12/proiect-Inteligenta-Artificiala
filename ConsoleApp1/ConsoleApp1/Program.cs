@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Globalization;
 using System.Collections.Generic;
 using ConsoleApp1.Core;
 
@@ -28,7 +30,34 @@ namespace ConsoleApp1
             Console.WriteLine("Se ruleaza optimizarea...");
             var solutiiOptime = algo.Run();
 
+            //pareto.csv convert cu toate solutiile din frontul Pareto in fisier CSV
+            var culture = CultureInfo.InvariantCulture; 
+            var csvLines = new List<string>();
+
             
+            csvLines.Add("Putere,Greutate,Aerodinamica,Viteza_kmh,Consum_Score");
+
+            
+            foreach (var s in solutiiOptime)
+            {
+                double putere = s.X[0];
+                double greutate = s.X[1];
+                double aero = s.X[2];
+
+                double viteza = -s.F1;  
+                double consum = s.F2;
+
+                csvLines.Add(string.Format(culture,
+                    "{0:F0},{1:F0},{2:F3},{3:F2},{4:F3}",
+                    putere, greutate, aero, viteza, consum
+                ));
+            }
+
+            
+            File.WriteAllLines("pareto.csv", csvLines);
+            Console.WriteLine("\n[OK] Am salvat pareto.csv");
+
+
             Console.WriteLine("\nRezultate finale (front Pareto)");
             Console.WriteLine("Acestea sunt cele mai eficiente configuratii gasite:");
             Console.WriteLine("");
