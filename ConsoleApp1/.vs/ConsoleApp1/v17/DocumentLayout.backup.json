@@ -1,26 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Downloads\\proiect-Inteligenta-Artificiala\\ConsoleApp1\\",
+  "WorkspaceRootPath": "C:\\Users\\andre\\Desktop\\GitHub repositories\\proiect-Inteligenta-Artificiala\\ConsoleApp1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{232F9D68-B104-4349-AB60-F4E37679218B}|ConsoleApp1\\ConsoleApp1.csproj|d:\\downloads\\proiect-inteligenta-artificiala\\consoleapp1\\consoleapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{232F9D68-B104-4349-AB60-F4E37679218B}|ConsoleApp1\\ConsoleApp1.csproj|c:\\users\\andre\\desktop\\github repositories\\proiect-inteligenta-artificiala\\consoleapp1\\consoleapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{232F9D68-B104-4349-AB60-F4E37679218B}|ConsoleApp1\\ConsoleApp1.csproj|solutionrelative:consoleapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{232F9D68-B104-4349-AB60-F4E37679218B}|ConsoleApp1\\ConsoleApp1.csproj|D:\\Downloads\\proiect-Inteligenta-Artificiala\\ConsoleApp1\\consoleapp1\\core\\nsga-ii.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{232F9D68-B104-4349-AB60-F4E37679218B}|ConsoleApp1\\ConsoleApp1.csproj|solutionrelative:consoleapp1\\core\\nsga-ii.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{232F9D68-B104-4349-AB60-F4E37679218B}|ConsoleApp1\\ConsoleApp1.csproj|D:\\Downloads\\proiect-Inteligenta-Artificiala\\ConsoleApp1\\consoleapp1\\core\\individual.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{232F9D68-B104-4349-AB60-F4E37679218B}|ConsoleApp1\\ConsoleApp1.csproj|solutionrelative:consoleapp1\\core\\individual.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{232F9D68-B104-4349-AB60-F4E37679218B}|ConsoleApp1\\ConsoleApp1.csproj|D:\\Downloads\\proiect-Inteligenta-Artificiala\\ConsoleApp1\\consoleapp1\\core\\designvariable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{232F9D68-B104-4349-AB60-F4E37679218B}|ConsoleApp1\\ConsoleApp1.csproj|C:\\Users\\andre\\Desktop\\GitHub repositories\\proiect-Inteligenta-Artificiala\\ConsoleApp1\\consoleapp1\\core\\designvariable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{232F9D68-B104-4349-AB60-F4E37679218B}|ConsoleApp1\\ConsoleApp1.csproj|solutionrelative:consoleapp1\\core\\designvariable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{232F9D68-B104-4349-AB60-F4E37679218B}|ConsoleApp1\\ConsoleApp1.csproj|D:\\Downloads\\proiect-Inteligenta-Artificiala\\ConsoleApp1\\consoleapp1\\core\\imultiobjectiveproblem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{232F9D68-B104-4349-AB60-F4E37679218B}|ConsoleApp1\\ConsoleApp1.csproj|C:\\Users\\andre\\Desktop\\GitHub repositories\\proiect-Inteligenta-Artificiala\\ConsoleApp1\\consoleapp1\\core\\imultiobjectiveproblem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{232F9D68-B104-4349-AB60-F4E37679218B}|ConsoleApp1\\ConsoleApp1.csproj|solutionrelative:consoleapp1\\core\\imultiobjectiveproblem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{232F9D68-B104-4349-AB60-F4E37679218B}|ConsoleApp1\\ConsoleApp1.csproj|C:\\Users\\andre\\Desktop\\GitHub repositories\\proiect-Inteligenta-Artificiala\\ConsoleApp1\\consoleapp1\\core\\nsga-ii.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{232F9D68-B104-4349-AB60-F4E37679218B}|ConsoleApp1\\ConsoleApp1.csproj|solutionrelative:consoleapp1\\core\\nsga-ii.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{232F9D68-B104-4349-AB60-F4E37679218B}|ConsoleApp1\\ConsoleApp1.csproj|C:\\Users\\andre\\Desktop\\GitHub repositories\\proiect-Inteligenta-Artificiala\\ConsoleApp1\\consoleapp1\\core\\individual.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{232F9D68-B104-4349-AB60-F4E37679218B}|ConsoleApp1\\ConsoleApp1.csproj|solutionrelative:consoleapp1\\core\\individual.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,29 +34,29 @@
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Individual.cs",
-              "DocumentMoniker": "D:\\Downloads\\proiect-Inteligenta-Artificiala\\ConsoleApp1\\ConsoleApp1\\Core\\Individual.cs",
+              "DocumentMoniker": "C:\\Users\\andre\\Desktop\\GitHub repositories\\proiect-Inteligenta-Artificiala\\ConsoleApp1\\ConsoleApp1\\Core\\Individual.cs",
               "RelativeDocumentMoniker": "ConsoleApp1\\Core\\Individual.cs",
-              "ToolTip": "D:\\Downloads\\proiect-Inteligenta-Artificiala\\ConsoleApp1\\ConsoleApp1\\Core\\Individual.cs",
+              "ToolTip": "C:\\Users\\andre\\Desktop\\GitHub repositories\\proiect-Inteligenta-Artificiala\\ConsoleApp1\\ConsoleApp1\\Core\\Individual.cs",
               "RelativeToolTip": "ConsoleApp1\\Core\\Individual.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAAABcAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABcAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-03T14:13:18.928Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "NSGA-II.cs",
-              "DocumentMoniker": "D:\\Downloads\\proiect-Inteligenta-Artificiala\\ConsoleApp1\\ConsoleApp1\\Core\\NSGA-II.cs",
+              "DocumentMoniker": "C:\\Users\\andre\\Desktop\\GitHub repositories\\proiect-Inteligenta-Artificiala\\ConsoleApp1\\ConsoleApp1\\Core\\NSGA-II.cs",
               "RelativeDocumentMoniker": "ConsoleApp1\\Core\\NSGA-II.cs",
-              "ToolTip": "D:\\Downloads\\proiect-Inteligenta-Artificiala\\ConsoleApp1\\ConsoleApp1\\Core\\NSGA-II.cs",
+              "ToolTip": "C:\\Users\\andre\\Desktop\\GitHub repositories\\proiect-Inteligenta-Artificiala\\ConsoleApp1\\ConsoleApp1\\Core\\NSGA-II.cs",
               "RelativeToolTip": "ConsoleApp1\\Core\\NSGA-II.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABkAAAA1AAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAA1wBkAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-03T14:13:27.684Z"
             },
@@ -64,22 +64,22 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Downloads\\proiect-Inteligenta-Artificiala\\ConsoleApp1\\ConsoleApp1\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\andre\\Desktop\\GitHub repositories\\proiect-Inteligenta-Artificiala\\ConsoleApp1\\ConsoleApp1\\Program.cs",
               "RelativeDocumentMoniker": "ConsoleApp1\\Program.cs",
-              "ToolTip": "D:\\Downloads\\proiect-Inteligenta-Artificiala\\ConsoleApp1\\ConsoleApp1\\Program.cs",
+              "ToolTip": "C:\\Users\\andre\\Desktop\\GitHub repositories\\proiect-Inteligenta-Artificiala\\ConsoleApp1\\ConsoleApp1\\Program.cs",
               "RelativeToolTip": "ConsoleApp1\\Program.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAgwBcAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADUAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-28T16:04:51.158Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "IMultiObjectiveProblem.cs",
-              "DocumentMoniker": "D:\\Downloads\\proiect-Inteligenta-Artificiala\\ConsoleApp1\\ConsoleApp1\\Core\\IMultiObjectiveProblem.cs",
+              "DocumentMoniker": "C:\\Users\\andre\\Desktop\\GitHub repositories\\proiect-Inteligenta-Artificiala\\ConsoleApp1\\ConsoleApp1\\Core\\IMultiObjectiveProblem.cs",
               "RelativeDocumentMoniker": "ConsoleApp1\\Core\\IMultiObjectiveProblem.cs",
-              "ToolTip": "D:\\Downloads\\proiect-Inteligenta-Artificiala\\ConsoleApp1\\ConsoleApp1\\Core\\IMultiObjectiveProblem.cs",
+              "ToolTip": "C:\\Users\\andre\\Desktop\\GitHub repositories\\proiect-Inteligenta-Artificiala\\ConsoleApp1\\ConsoleApp1\\Core\\IMultiObjectiveProblem.cs",
               "RelativeToolTip": "ConsoleApp1\\Core\\IMultiObjectiveProblem.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -87,13 +87,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "DesignVariable.cs",
-              "DocumentMoniker": "D:\\Downloads\\proiect-Inteligenta-Artificiala\\ConsoleApp1\\ConsoleApp1\\Core\\DesignVariable.cs",
+              "DocumentMoniker": "C:\\Users\\andre\\Desktop\\GitHub repositories\\proiect-Inteligenta-Artificiala\\ConsoleApp1\\ConsoleApp1\\Core\\DesignVariable.cs",
               "RelativeDocumentMoniker": "ConsoleApp1\\Core\\DesignVariable.cs",
-              "ToolTip": "D:\\Downloads\\proiect-Inteligenta-Artificiala\\ConsoleApp1\\ConsoleApp1\\Core\\DesignVariable.cs",
+              "ToolTip": "C:\\Users\\andre\\Desktop\\GitHub repositories\\proiect-Inteligenta-Artificiala\\ConsoleApp1\\ConsoleApp1\\Core\\DesignVariable.cs",
               "RelativeToolTip": "ConsoleApp1\\Core\\DesignVariable.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwAgAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-03T14:12:48.846Z"
             }

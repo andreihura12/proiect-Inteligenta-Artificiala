@@ -1,57 +1,78 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using ConsoleApp1.Core;
 
 namespace ConsoleApp1
 {
     class Program
     {
-        static void Main()
+        static void Main(string[] args)
         {
-            Console.WriteLine("=== TEST NSGA-II CORE (ZDT1) ===");
+            Console.WriteLine("=== INITIALIZARE ALGORITM NSGA-II ===");
+            Console.WriteLine("Problema: Optimizare Design Masina (Viteza vs Consum)");
+            Console.WriteLine("-----------------------------------------------------");
 
-            IMultiObjectiveProblem problem = new Zdt1Problem();
+           
+            var carProblem = new CarProblem();
 
-            var nsga = new NSGA_II(
-                problem: problem,
+            
+            var algo = new NSGA_II(
+                problem: carProblem,
                 populationSize: 100,
-                generations: 150,
+                generations: 100,
                 crossoverProbability: 0.9,
-                mutationProbability: 1.0 / problem.Vars.Count
+                mutationProbability: 0.1
             );
 
-            var pareto = nsga.Run();
+           
+            Console.WriteLine("Se ruleaza optimizarea...");
+            var solutiiOptime = algo.Run();
 
-            Console.WriteLine("\nPareto front (first 10):");
-            foreach (var ind in pareto.Take(10))
-                Console.WriteLine($"f1={ind.F1:F4}, f2={ind.F2:F4}");
+            
+            Console.WriteLine("\nRezultate finale (front Pareto)");
+            Console.WriteLine("Acestea sunt cele mai eficiente configuratii gasite:");
+            Console.WriteLine("");
+            Console.WriteLine("{0,-10} | {1,-10} | {2,-10} || {3,-15} | {4,-15}",
+                "Putere", "Greutate", "Aero", "Viteza (km/h)", "Consum (Score)");
+            Console.WriteLine(new string('-', 85));
 
-            Console.WriteLine($"\nFront1 final size = {pareto.Count}");
-            Console.ReadKey();
+            foreach (var s in solutiiOptime)
+            {
+                double cp = s.X[0];
+                double kg = s.X[1];
+                double aero = s.X[2];
+
+                
+                double viteza = -s.F1;
+                double consum = s.F2;
+
+                Console.WriteLine("{0,-10:F0} | {1,-10:F0} | {2,-10:F2} || {3,-15:F1} | {4,-15:F2}",
+                    cp, kg, aero, viteza, consum);
+            }
+
+
+            Console.ReadLine();
         }
     }
 
-    // ZDT1 test problem (standard)
-    public class Zdt1Problem : IMultiObjectiveProblem
+    
+    public class CarProblem : IMultiObjectiveProblem
     {
-        public IReadOnlyList<DesignVariable> Vars { get; } =
-            Enumerable.Range(1, 10)
-                .Select(i => new DesignVariable($"x{i}", 0.0, 1.0))
-                .ToList();
+        public IReadOnlyList<DesignVariable> Vars { get; } = new List<DesignVariable>
+        {
+            new DesignVariable("Putere", 50, 400),
+            new DesignVariable("Greutate", 800, 2500),
+            new DesignVariable("Aerodinamica", 0.2, 0.6)
+        };
 
         public (double f1, double f2) Evaluate(double[] x)
         {
-            double f1 = x[0];
-
-            double sum = 0.0;
-            for (int i = 1; i < x.Length; i++)
-                sum += x[i];
-
-            double g = 1.0 + 9.0 * (sum / (x.Length - 1));
-            double f2 = g * (1.0 - Math.Sqrt(f1 / g));
-
-            return (f1, f2);
+            double putere = x[0];
+            double greutate = x[1];
+            double aero = x[2];
+            double viteza = 22.5 * Math.Pow(putere / (aero * 0.5), 0.33);
+            double consum = (putere * 0.04) + (greutate * 0.003) + (aero * 10);
+            return (-viteza, consum);
         }
     }
 }
