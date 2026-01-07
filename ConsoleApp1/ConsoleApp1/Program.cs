@@ -10,7 +10,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("=== INITIALIZARE ALGORITM NSGA-II ===");
+            Console.WriteLine("Initializare algoritm NSGA-II");
             Console.WriteLine("Problema: Optimizare Design Masina (Viteza vs Consum)");
             Console.WriteLine("-----------------------------------------------------");
 
@@ -30,7 +30,6 @@ namespace ConsoleApp1
             Console.WriteLine("Se ruleaza optimizarea...");
             var solutiiOptime = algo.Run();
 
-            //pareto.csv convert cu toate solutiile din frontul Pareto in fisier CSV
             var culture = CultureInfo.InvariantCulture; 
             var csvLines = new List<string>();
 
@@ -55,8 +54,6 @@ namespace ConsoleApp1
 
             
             File.WriteAllLines("pareto.csv", csvLines);
-            Console.WriteLine("\n[OK] Am salvat pareto.csv");
-
 
             Console.WriteLine("\nRezultate finale (front Pareto)");
             Console.WriteLine("Acestea sunt cele mai eficiente configuratii gasite:");
